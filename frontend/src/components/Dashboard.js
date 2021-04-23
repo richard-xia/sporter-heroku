@@ -128,7 +128,7 @@ const Dashboard = (props) => {
             onClick={() => setShowGameModal(true)}
           >
             {' '}
-            + Start a new Gamee
+            + Start a new Game
           </Button>
         </div>
         <Tabs className={classes.tabs} defaultActiveKey='currentGames'>
