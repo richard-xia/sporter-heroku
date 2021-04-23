@@ -51,12 +51,13 @@ const Dashboard = (props) => {
 
   //Get the information of the current user
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setLocation({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      })
-    })
+//Get current position is disabled due to map not showing if user declines
+//     navigator.geolocation.getCurrentPosition(function (position) {
+//       setLocation({
+//         lat: position.coords.latitude,
+//         lng: position.coords.longitude,
+//       })
+//     })
     axios
       .get(`/api/v1/users/getDashboard`)
       .then((res) => {
