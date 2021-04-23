@@ -7,7 +7,6 @@ import {
   Circle,
   Marker,
 } from 'react-google-maps'
-import Autocomplete from 'react-google-autocomplete'
 import Geocode from 'react-geocode'
 import { withRouter } from 'react-router-dom'
 import { Image } from 'react-bootstrap'
@@ -219,7 +218,6 @@ class FindMap extends Component {
                     ) || this.state.filterList.length === 0 ? (
                       <div>
                         <InfoWindow
-                          defaultOptions={{ disableAutoPan: true }}
                           position={{
                             lat: group.location.coordinates[0],
                             lng: group.location.coordinates[1],
@@ -274,7 +272,7 @@ class FindMap extends Component {
                             lng: game.location.coordinates[1],
                           }}
                         >
-                          <InfoWindow defaultOptions={{ disableAutoPan: true }}>
+                          <InfoWindow>
                             <div className={classes.infoWindow}>
                               <Image
                                 src={`${baseURL}/uploads/${game.photo}`}
@@ -300,19 +298,6 @@ class FindMap extends Component {
                 ))}
               </div>
             )}
-            {/* For Auto complete Search Box */}
-            <div>
-              <Autocomplete
-                style={{
-                  width: '100%',
-                  height: '40px',
-                  paddingLeft: '16px',
-                  marginTop: '2px',
-                }}
-                onPlaceSelected={this.onPlaceSelected}
-                types={'(street_address)'}
-              />
-            </div>
           </GoogleMap>
         </div>
       ))
