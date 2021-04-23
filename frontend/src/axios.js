@@ -6,14 +6,14 @@ import axios from 'axios'
  *******************************************************************************/
 
 axios.interceptors.request.use((config) => {
-  config.baseURL = 'https://sporter-heroku.herokuapp.com'
+  config.baseURL = 'https://sporter-project.herokuapp.com'
   //config.baseURL = 'http://localhost:5000'
   const token = localStorage.getItem('jwtToken')
   config.headers.common['Authorization'] = `Bearer ${token}`
   return config
 })
 
-export const baseURL = 'https://sporter-heroku.herokuapp.com'
+export const baseURL = 'https://sporter-project.herokuapp.com'
 //export const baseURL = 'http://localhost:5000'
 
 export default axios
