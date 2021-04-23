@@ -52,12 +52,12 @@ const Dashboard = (props) => {
   //Get the information of the current user
   useEffect(() => {
 //Get current position is disabled due to map not showing if user declines
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//       setLocation({
-//         lat: position.coords.latitude,
-//         lng: position.coords.longitude,
-//       })
-//     })
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setLocation({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      })
+    })
     axios
       .get(`/api/v1/users/getDashboard`)
       .then((res) => {
@@ -123,7 +123,7 @@ const Dashboard = (props) => {
             onClick={() => setShowGameModal(true)}
           >
             {' '}
-            + Start a new Game
+            + Start a new Gamee
           </Button>
         </div>
         <Tabs className={classes.tabs} defaultActiveKey='currentGames'>
